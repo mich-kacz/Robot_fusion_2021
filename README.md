@@ -1,6 +1,6 @@
 # Robot_fusion_2021
 
-This is repository of new AGV platform. 
+This is repository of new AGV platform made by "SKN Fusion" academic circle.
 
 Main platform features:
   1. Mapping based on own algorithm used to autonomus driving.
