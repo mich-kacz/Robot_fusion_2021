@@ -7,7 +7,7 @@ Pub_Sub::Pub_Sub(ros::NodeHandle *nh_main, char pub_topic[15], char pub2_topic[1
   sub(sub_topic, &Pub_Sub::callback, this)
 {
   nh=nh_main;
-	nh->advertise(chatter);
+  nh->advertise(chatter);
   nh->advertise(chatter2);
   nh->subscribe(sub);
 }
@@ -16,9 +16,9 @@ Pub_Sub::Pub_Sub(ros::NodeHandle *nh_main, char pub_topic[15], char pub2_topic[1
 
 void Pub_Sub::pub(float data)
 {
-	str_msg.data=data;
-	chatter.publish(& str_msg);
-	nh->spinOnce();
+  str_msg.data=data;
+  chatter.publish(& str_msg);
+  nh->spinOnce();
 }
 
 
@@ -69,8 +69,8 @@ float Pub_Sub::get_message(char flag[1])
 
 Pub_Sub::~Pub_Sub()
 {
-	/*str_msg.data="Arduino Bye";
-	chatter.publish(& str_msg);
-	nh->spinOnce();
-	delay(5000);*/
+  /*str_msg.data="Arduino Bye";
+  chatter.publish(& str_msg);
+  nh->spinOnce();
+  delay(5000);*/
 }

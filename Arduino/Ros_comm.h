@@ -27,9 +27,9 @@ class Pub_Sub
   void callback(const geometry_msgs::Twist &msg); //Callback function for subscriber
   
   public:
-	Pub_Sub(ros::NodeHandle *nh_main, char [], char [], char []);//Contructor takes parameters(address of nodehandler, Topic names: 1.Pub floats 2.Pub range 3.Sub)
-	~Pub_Sub(); //Destructor is not doing antyhing yet
-	void pub(float); //function for publishing data (from distance sensors)
+  Pub_Sub(ros::NodeHandle *nh_main, char [], char [], char []);//Contructor takes parameters(address of nodehandler, Topic names: 1.Pub floats 2.Pub range 3.Sub)
+  ~Pub_Sub(); //Destructor is not doing antyhing yet
+  void pub(float); //function for publishing data (from distance sensors)
   float get_message(char []); //Public function to get last message
   void update_msgs(); //Function to update incoming messages
   void pub_sensors(float, float, float, char []); //Publisher of range data type values(distance, min_range, max_range, frame_id)
