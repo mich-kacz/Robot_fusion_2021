@@ -14,9 +14,12 @@ Pub_Sub::Pub_Sub(ros::NodeHandle *nh_main, char pub_topic[15], char pub2_topic[1
 
 
 
-void Pub_Sub::pub(float data)
+void Pub_Sub::pub(float speed_left, float speed_right)
 {
-  str_msg.data=data;
+  str_msg.header.stamp = nh->now(); 
+  str_msg.vector.x=speed_left;
+  str_msg.vector.y=speed_right;
+  str_msg.vector.z=0.2;
   chatter.publish(& str_msg);
   nh->spinOnce();
 }
@@ -28,7 +31,10 @@ void Pub_Sub::pub_sensors(float data, float min_range, float max_range, char id[
   range_msg.range=data/100;
   range_msg.min_range=min_range/100;
   range_msg.max_range=max_range/100;
-  range_msg.header.frame_id=id;
+  range_msg.header.frame_id=id;     
+  range_msg.header.stamp = nh->now(); 
+  range_msg.radiation_type=0;       // Tutaj jest podana wartosc losowa mozna zmienic
+  range_msg.field_of_view=5;       // Tutaj jest podana wartosc losowa mozna zmienic
 
   chatter2.publish(& range_msg);
   nh->spinOnce();
