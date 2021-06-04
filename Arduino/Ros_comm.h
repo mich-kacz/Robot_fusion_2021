@@ -30,7 +30,7 @@ class Pub_Sub
   public:
   Pub_Sub(ros::NodeHandle *nh_main, char [], char [], char []);//Contructor takes parameters(address of nodehandler, Topic names: 1.Pub floats 2.Pub range 3.Sub)
   ~Pub_Sub(); //Destructor is not doing antyhing yet
-  void pub(float, float); //function for publishing data (from distance sensors)
+  void pub(float, float); //function for publishing data (from distance/?velocity? sensors)
   float get_message(char []); //Public function to get last message
   void update_msgs(); //Function to update incoming messages
   void pub_sensors(float, float, float, char []); //Publisher of range data type values(distance, min_range, max_range, frame_id)

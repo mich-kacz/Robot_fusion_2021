@@ -56,9 +56,9 @@ void loop()
   {
     cont.update_encoders();
   
-    ross.pub(speed_temp, speed_temp);
+    ross.pub(cont.velocity_1, cont.velocity_2);
     
-    ross.pub_sensors(dist_temp, 10, 80, "/ULTS1");
+    //ross.pub_sensors(dist_temp, 10, 80, "/ULTS1");
 
     /*if(dist_temp<70)
       dist_temp++;
